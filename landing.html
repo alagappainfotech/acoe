@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alagappa Centre of Excellence | Best Coaching Center in Karaikudi</title>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&family=Nunito:wght@400;600;700&family=Roboto:wght@400;500;700&family=Poppins:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="https://placehold.co/16x16/64B5F6/FFFFFF?text=ACE" type="image/x-icon">
+    <style>
+      /* Common styles (applied across all designs) */
+      body {
+        font-family: 'Inter', sans-serif; /* Default font */
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .section {
+        padding: 60px 0;
+      }
+      .btn {
+        @apply px-6 py-3 rounded-full font-semibold text-white transition-colors duration-300 inline-flex items-center justify-center;
+      }
+      .heading-1 {
+        @apply text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4;
+      }
+      .heading-2 {
+        @apply text-2xl sm:text-3xl font-semibold text-gray-700 mb-3;
+      }
+      .text-body {
+        @apply text-gray-600 text-base sm:text-lg;
+        line-height: 1.7;
+      }
+       .course-card {
+            @apply bg-white rounded-lg shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg;
+        }
+        .course-card-content {
+            @apply p-4;
+        }
+        .course-card-title {
+            @apply text-xl font-semibold text-gray-800 mb-2;
+        }
+        .course-card-description {
+            @apply text-gray-600 text-sm;
+        }
+        .tutor-profile {
+            @apply bg-white rounded-lg shadow-md p-4 flex flex-col items-center text-center;
+        }
+        .tutor-name {
+            @apply text-lg font-semibold text-gray-800 mt-2;
+        }
+        .tutor-qualification {
+            @apply text-gray-500 text-sm;
+        }
+        .testimonial-card {
+            @apply bg-gray-100 rounded-lg p-4 mb-4;
+        }
+        /* Base active link styles - these will be overridden by specific designs */
+        .nav-link.active,
+        .mobile-nav-link.active {
+            font-weight: 600;
+        }
+
+        /* Animation for courses and tutors */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+    </style>
+
+    <style id="design-styles">
+      /* Design-specific styles will be added here by JavaScript */
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white shadow-md py-4" id="main-header">
+        <div class="container flex justify-between items-center">
+            <a href="#" class="flex items-center text-2xl font-bold text-blue-600" id="logo">
+                <span class="mr-2">Alagappa</span>
+                <span class="text-gray-800">Centre of Excellence</span>
+            </a>
+            <nav class="hidden md:block" id="main-nav">
+                <ul class="flex space-x-6">
+                    <li><a href="#home" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Home</a></li>
+                    <li><a href="#about" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">About Us</a></li>
+                    <li><a href="#courses" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Courses</a></li>
+                    <li><a href="#tutors" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Our Tutors</a></li>
+                    <li><a href="#testimonials" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Testimonials</a></li>
+                    <li><a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Contact Us</a></li>
+                </ul>
+            </nav>
+            <button id="hamburger-btn" class="md:hidden text-gray-700 focus:outline-none" aria-label="Toggle Navigation">
+                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-90 z-50">
+        <div class="bg-white w-80 h-full absolute right-0 p-6">
+            <div class="flex justify-end mb-4">
+                <button id="close-menu-btn" class="text-gray-700 focus:outline-none" aria-label="Close Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <nav class="block">
+                <ul class="space-y-4">
+                    <li><a href="#home" class="mobile-nav-link block text-gray-700 hover:text-blue-600 text-lg transition-colors">Home</a></li>
+                    <li><a href="#about" class="mobile-nav-link block text-gray-700 hover:text-blue-600 text-lg transition-colors">About Us</a></li>
+                    <li><a href="#courses" class="mobile-nav-link block text-gray-700 hover:text-blue-600 text-lg transition-colors">Courses</a></li>
+                    <li><a href="#tutors" class="mobile-nav-link block text-gray-700 hover:text-blue-600 text-lg transition-colors">Our Tutors</a></li>
+                    <li><a href="#testimonials" class="mobile-nav-link block text-gray-700 hover:text-blue-600 text-lg transition-colors">Testimonials</a></li>
+                    <li><a href="#contact" class="mobile-nav-link block text-gray-700 hover:text-blue-600 text-lg transition-colors">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <main>
+        <section id="home" class="section bg-gray-50">
+            <div class="container">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div id="home-content">
+                        <h1 class="heading-1">Unlock Your Potential with Alagappa Centre of Excellence</h1>
+                        <p class="text-body mb-6">Your path to academic success in Karaikudi. We provide expert coaching for CBSE and State Board students, taught by Karaikudi's best tutors.</p>
+                        <a href="#courses" class="btn btn-primary">Explore Our Courses</a>
+                    </div>
+                    <div id="home-image">
+                         <div class="relative rounded-lg overflow-hidden shadow-lg h-80">
+                            <img src="https://placehold.co/600x400/A0B9E0/FFFFFF?text=Students+Studying" alt="Students studying" class="w-full h-full transition-transform duration-500 transform hover:scale-110 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h2 class="text-xl font-semibold">Welcome to Alagappa</h2>
+                                <p class="text-sm">Learn from the best</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section bg-white">
+            <div class="container">
+                <h2 class="heading-2 text-center mb-8">About Us</h2>
+                <div class="grid md:grid-cols-2 gap-8" id="about-content">
+                    <div>
+                        <h3 class="text-xl font-semibold text-blue-600 mb-2">Our Vision</h3>
+                        <p class="text-body mb-4">To be the leading coaching center in Karaikudi, empowering students to achieve their academic goals and become lifelong learners.</p>
+                        <h3 class="text-xl font-semibold text-blue-600 mb-2">Our Mission</h3>
+                        <p class="text-body mb-4">To provide high-quality, personalized coaching with experienced tutors, fostering a supportive and engaging learning environment.</p>
+                        <h3 class="text-xl font-semibold text-blue-600 mb-2">Why Choose Us?</h3>
+                        <ul class="list-disc list-inside text-body">
+                            <li>Best Tutors with proven expertise</li>
+                            <li>Personalized attention with small class sizes</li>
+                            <li>Proven track record of student success</li>
+                            <li>Comprehensive study material and resources</li>
+                            <li>Regular assessments and feedback</li>
+                            <li>Focus on holistic development</li>
+                        </ul>
+                         <a href="#tutors" class="mt-6 inline-block btn btn-secondary">Meet Our Tutors</a>
+                    </div>
+                    <div id="about-image">
+                         <div class="relative rounded-lg overflow-hidden shadow-lg h-80">
+                            <img src="https://placehold.co/600x400/90CAF9/FFFFFF?text=Team+Collaboration" alt="About Alagappa Centre" class="w-full h-full object-cover transition-transform duration-500 transform hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h2 class="text-xl font-semibold">A Legacy of Excellence</h2>
+                                <p class="text-sm">Serving Karaikudi for 20+ years</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="courses" class="section bg-gray-50">
+            <div class="container">
+                <h2 class="heading-2 text-center mb-8">Our Courses</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="courses-grid">
+                    <div class="course-card animate-fade-in-up">
+                        <div class="course-card-content">
+                            <h3 class="course-card-title">CBSE - Class 10</h3>
+                            <p class="course-card-description">Comprehensive coaching for CBSE Class 10, covering all subjects with a focus on board exam preparation.</p>
+                            <ul class="list-disc list-inside text-sm mt-2">
+                                <li>Mathematics</li>
+                                <li>Science</li>
+                                 <li>Social Science</li>
+                                  <li>English</li>
+                                   <li>Hindi</li>
+                            </ul>
+                            <a href="#" class="mt-4 inline-block btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                    <div class="course-card animate-fade-in-up" style="animation-delay: 0.1s;">
+                        <div class="course-card-content">
+                            <h3 class="course-card-title">State Board - Class 12</h3>
+                            <p class="course-card-description">Intensive coaching for Tamil Nadu State Board Class 12, helping students excel in their board exams.</p>
+                             <ul class="list-disc list-inside text-sm mt-2">
+                                <li>Mathematics</li>
+                                <li>Physics</li>
+                                 <li>Chemistry</li>
+                                  <li>Biology</li>
+                                   <li>Tamil</li>
+                                    <li>English</li>
+                            </ul>
+                            <a href="#" class="mt-4 inline-block btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                    <div class="course-card animate-fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="course-card-content">
+                            <h3 class="course-card-title">NEET/JEE Preparation</h3>
+                            <p class="course-card-description">Specialized coaching for NEET and JEE entrance exams, providing rigorous training and expert guidance.</p>
+                            <ul class="list-disc list-inside text-sm mt-2">
+                                <li>Physics</li>
+                                <li>Chemistry</li>
+                                 <li>Mathematics (JEE)</li>
+                                  <li>Biology (NEET)</li>
+                            </ul>
+                            <a href="#" class="mt-4 inline-block btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                     <div class="course-card animate-fade-in-up" style="animation-delay: 0.3s;">
+                        <div class="course-card-content">
+                            <h3 class="course-card-title">CBSE - Class 9</h3>
+                            <p class="course-card-description">Comprehensive coaching for CBSE Class 9, covering all subjects with a focus on board exam preparation.</p>
+                             <ul class="list-disc list-inside text-sm mt-2">
+                                <li>Mathematics</li>
+                                <li>Science</li>
+                                 <li>Social Science</li>
+                                  <li>English</li>
+                                   <li>Hindi</li>
+                            </ul>
+                            <a href="#" class="mt-4 inline-block btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                    <div class="course-card animate-fade-in-up" style="animation-delay: 0.4s;">
+                        <div class="course-card-content">
+                            <h3 class="course-card-title">State Board - Class 11</h3>
+                            <p class="course-card-description">Intensive coaching for Tamil Nadu State Board Class 11, helping students excel in their board exams.</p>
+                            <ul class="list-disc list-inside text-sm mt-2">
+                                <li>Mathematics</li>
+                                <li>Physics</li>
+                                 <li>Chemistry</li>
+                                  <li>Biology</li>
+                                   <li>Tamil</li>
+                                    <li>English</li>
+                            </ul>
+                            <a href="#" class="mt-4 inline-block btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="mt-8 text-center">
+                    <a href="#" class="btn btn-secondary">View All Courses</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="tutors" class="section bg-white">
+            <div class="container">
+                <h2 class="heading-2 text-center mb-8">Our Tutors</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="tutors-grid">
+                    <div class="tutor-profile animate-fade-in-up">
+                        <div class="relative rounded-full overflow-hidden w-32 h-32">
+                            <img src="https://placehold.co/150x150/A0B9E0/FFFFFF?text=Tutor+1" alt="Tutor Name" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black/20 rounded-full opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <a href="#" class="text-white text-sm font-semibold hover:text-blue-400 transition-colors flex items-center">View Profile</a>
+                            </div>
+                        </div>
+                        <h3 class="tutor-name">Mr. A. Ramesh</h3>
+                        <p class="tutor-qualification">M.Sc., B.Ed.</p>
+                        <p class="text-gray-600 text-sm">Physics Expert</p>
+                         <p class="text-gray-600 text-xs mt-2">15+ Years Experience</p>
+                    </div>
+                    <div class="tutor-profile animate-fade-in-up" style="animation-delay: 0.1s;">
+                         <div class="relative rounded-full overflow-hidden w-32 h-32">
+                            <img src="https://placehold.co/150x150/90CAF9/FFFFFF?text=Tutor+2" alt="Tutor Name" class="w-full h-full object-cover">
+                             <div class="absolute inset-0 bg-black/20 rounded-full opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <a href="#" class="text-white text-sm font-semibold hover:text-blue-400 transition-colors flex items-center">View Profile</a>
+                            </div>
+                        </div>
+                        <h3 class="tutor-name">Mrs. S. Priya</h3>
+                        <p class="tutor-qualification">M.A., M.Phil.</p>
+                        <p class="text-gray-600 text-sm">Mathematics Specialist</p>
+                        <p class="text-gray-600 text-xs mt-2">12+ Years Experience</p>
+                    </div>
+                    <div class="tutor-profile animate-fade-in-up" style="animation-delay: 0.2s;">
+                         <div class="relative rounded-full overflow-hidden w-32 h-32">
+                            <img src="https://placehold.co/150x150/64B5F6/FFFFFF?text=Tutor+3" alt="Tutor Name" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black/20 rounded-full opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                                 <a href="#" class="text-white text-sm font-semibold hover:text-blue-400 transition-colors flex items-center">View Profile</a>
+                            </div>
+                        </div>
+                        <h3 class="tutor-name">Dr. K. Sharma</h3>
+                        <p class="tutor-qualification">Ph.D., NET</p>
+                        <p class="text-gray-600 text-sm">Chemistry Professor</p>
+                        <p class="text-600 text-xs mt-2">20+ Years Experience</p>
+                    </div>
+                </div>
+                 <div class="mt-8 text-center">
+                    <a href="#" class="btn btn-secondary">View All Tutors</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="section bg-gray-50">
+            <div class="container">
+                <h2 class="heading-2 text-center mb-8">Testimonials</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="testimonials-grid">
+                    <div class="testimonial-card">
+                        <p class="text-gray-700 italic mb-2">"Alagappa Centre of Excellence provided excellent coaching and support. My daughter scored 95% in her Class 10 board exams!"</p>
+                        <p class="text-gray-600 font-semibold flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 mr-2 text-blue-500">
+                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1-11a4 4 0 019 0v4a4 4 0 01-9 0v-4zm7 7a3 3 0 01-3-3 3 3 0 00-3 3h6z" clip-rule="evenodd" />
+                            </svg>
+                            Mrs. R. Devi, Parent
+                        </p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="text-gray-700 italic mb-2">"The tutors are highly knowledgeable and dedicated. They helped me a lot with my NEET preparation. I got into my dream medical college."</p>
+                        <p class="text-gray-600 font-semibold flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 mr-2 text-green-500">
+                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1-11a4 4 0 019 0v4a4 4 0 01-9 0v-4zm7 7a3 3 0 01-3-3 3 3 0 00-3 3h6z" clip-rule="evenodd" />
+                            </svg>
+                            S. Karthik, Student
+                        </p>
+                    </div>
+                </div>
+                 <div class="mt-8 text-center">
+                    <a href="#" class="btn btn-secondary">Read More Testimonials</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section bg-white">
+            <div class="container">
+                <h2 class="heading-2 text-center mb-8">Contact Us</h2>
+                <div class="grid md:grid-cols-2 gap-8" id="contact-form">
+                    <div>
+                        <p class="text-body mb-4">
+                            <strong>Alagappa Centre of Excellence</strong><br>
+                            123 Main Road, Karaikudi, Tamil Nadu 630001<br>
+                            Phone: +91 9876543210<br>
+                            Email: info@alagappacoaching.com
+                        </p>
+                        <div class="mt-4">
+                            <h3 class="text-xl font-semibold text-blue-600 mb-2">Connect With Us</h3>
+                            <a href="#" class="mr-4 text-blue-500 hover:text-blue-700" aria-label="Facebook"><i class="fab fa-facebook-square fa-2x"></i></a>
+                            <a href="#" class="mr-4 text-blue-400 hover:text-blue-600" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x"></i></a>
+                            <a href="#" class="mr-4 text-indigo-500 hover:text-indigo-700" aria-label="Instagram"><i class="fab fa-instagram fa-2x"></i></a>
+                        </div>
+                    </div>
+                    <div>
+                        <form class="space-y-4" id="contact-form-element">
+                            <div>
+                                <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Your Name</label>
+                                <input type="text" id="name" placeholder="Your Name" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Your Email</label>
+                                <input type="email" id="email" placeholder="Your Email" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            </div>
+                             <div>
+                                <label for="subject" class="block text-gray-700 text-sm font-bold mb-2">Subject</label>
+                                <input type="text" id="subject" placeholder="Subject of your message" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Your Message</label>
+                                <textarea id="message" placeholder="Your Message" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-full">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2025 Alagappa Centre of Excellence. All rights reserved. | <a href="/privacy-policy" class="text-gray-300 hover:text-white transition-colors">Privacy Policy</a> | <a href="/terms-of-service" class="text-gray-300 hover:text-white transition-colors">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section');
+        const designStyles = document.getElementById('design-styles');
+        const logo = document.getElementById('logo');
+        const mainHeader = document.getElementById('main-header');
+        const homeContent = document.getElementById('home-content');
+        const homeImage = document.getElementById('home-image');
+        const aboutContent = document.getElementById('about-content');
+        const aboutImage = document.getElementById('about-image');
+        const coursesGrid = document.getElementById('courses-grid');
+        const tutorsGrid = document.getElementById('tutors-grid');
+        const testimonialsGrid = document.getElementById('testimonials-grid');
+        const contactForm = document.getElementById('contact-form-element');
+        const mobileNavLink = document.querySelectorAll('.mobile-nav-link');
+        const allButtons = document.querySelectorAll('button');
+        const allLinks = document.querySelectorAll('a');
+
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        hamburgerBtn.addEventListener('click', toggleMobileMenu);
+        closeMenuBtn.addEventListener('click', toggleMobileMenu);
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', toggleMobileMenu);
+        });document.addEventListener('click', (event) => {
+            if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(event.target) && event.target !== hamburgerBtn) {
+                toggleMobileMenu();
+            }
+        });
+
+         function updateActiveNavLink() {
+            let currentSectionId = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 100 && window.scrollY < sectionTop + sectionHeight - 100) {
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === currentSectionId) {
+                    link.classList.add('active');
+                }
+            });
+             mobileNavLink.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === currentSectionId) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNavLink);
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        const designStylesContent = {
+            modern: `
+                body {
+                    font-family: 'Poppins', sans-serif;
+                }
+                #main-header {
+                    background-color: #fff;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                }
+                #logo {
+                    color: #2c3e50;
+                }
+                .nav-link {
+                    color: #34495e;
+                    font-weight: 500;
+                    transition: color 0.3s ease, border-bottom 0.3s ease; /* Added border-bottom transition */
+                    padding-bottom: 4px; /* Space for underline */
+                }
+                .nav-link:hover {
+                    color: #007bff;
+                }
+                .nav-link.active {
+                    color: #007bff;
+                    border-bottom: 2px solid #007bff; /* Distinct underline for active state */
+                }
+                .mobile-nav-link.active {
+                    color: #007bff; /* Consistent active color for mobile */
+                }
+                .btn-primary {
+                    @apply bg-blue-500 hover:bg-blue-600 text-white rounded-md shadow-md;
+                }
+                 .btn-primary:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                }
+                .btn-secondary {
+                    @apply bg-gray-400 hover:bg-gray-500 text-white rounded-md shadow-md;
+                }
+                .btn-secondary:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                }
+                .heading-1 {
+                    @apply text-4xl sm:text-5xl md:text-6xl font-bold text-gray-800 mb-6;
+                }
+                .heading-2 {
+                    @apply text-3xl sm:text-4xl font-semibold text-gray-700 mb-4;
+                }
+                .text-body {
+                    @apply text-gray-600 text-lg sm:text-xl;
+                    line-height: 1.8;
+                }
+                .section {
+                    padding: 80px 0;
+                }
+                #home {
+                    background-color: #f9f9f9;
+                }
+                #home-content {
+                    @apply text-left;
+                }
+                #home-image {
+                    @apply flex justify-center;
+                }
+                #home-image .relative,
+                #about-image .relative {
+                    height: 320px; /* Fixed height for image containers */
+                }
+                #home-image img,
+                #about-image img{
+                   max-width: 100%; /* Ensure it fills the container */
+                   border-radius: 10px;
+                   box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+                   transition: transform 0.5s ease;
+                   height: 100%; /* Ensure image fills the container height */
+                   object-fit: cover; /* Maintain aspect ratio and cover area */
+                }
+                #home-image img:hover{
+                    transform: scale(1.05);
+                }
+                .course-card {
+                    @apply bg-white rounded-lg shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg border border-gray-200;
+                }
+                .course-card-content {
+                    @apply p-6;
+                }
+                .course-card-title {
+                    @apply text-2xl font-semibold text-gray-800 mb-3;
+                }
+                .course-card-description {
+                    @apply text-gray-600 text-base;
+                }
+                 .tutor-profile {
+                    @apply bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center border border-gray-200;
+                }
+                .tutor-name {
+                    @apply text-xl font-semibold text-gray-800 mt-3;
+                }.tutor-qualification {
+                    @apply text-gray-600 text-sm;
+                }
+                .testimonial-card {
+                    @apply bg-white rounded-lg p-6 mb-6 shadow-sm border border-gray-200;
+                }
+                .testimonial-card p{
+                    @apply text-gray-700 italic text-lg;
+                }
+                .testimonial-card p:last-child{
+                    @apply font-semibold text-gray-900 flex items-center;
+                }
+                .testimonial-card p:last-child svg{
+                    margin-right: 0.5rem;
+                }
+                #contact-form {
+                    @apply bg-gray-100 rounded-lg p-8 shadow-md;
+                }
+                #contact-form input,
+                #contact-form textarea {
+                    @apply shadow-sm border border-gray-300 rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline;
+                }
+                #contact-form label{
+                    @apply text-gray-900 font-medium;
+                }
+                footer {
+                    @apply bg-gray-900 text-gray-300 py-6;
+                    border-top: 1px solid #e5e7eb;
+                }
+                footer a{
+                    @apply text-blue-400 hover:text-blue-300;
+                }
+                .mobile-nav-link{
+                    @apply text-xl font-medium;
+                }
+                 .course-card ul li{
+                    margin-left: 0.5rem;
+                }
+                .tutor-profile a:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                }
+            `,
+            classic: `
+                body {
+                    font-family: 'Roboto', sans-serif; /* Changed to Roboto for Material Design */
+                }
+                #main-header {
+                    background-color: #ffffff; /* Clean, flat header */
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
+                    padding: 16px 0; /* More padding */
+                }
+                #logo {
+                    color: #1a73e8; /* Google Blue */
+                    font-weight: 700;
+                    font-size: 2.25rem; /* Larger logo */
+                }
+                .nav-link {
+                    color: #5f6368; /* Google grey */
+                    font-weight: 500;
+                    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+                    padding: 8px 12px;
+                    border-radius: 4px;
+                }
+                .nav-link:hover {
+                    color: #1a73e8; /* Highlight on hover */
+                    background-color: #f0f4f8; /* Light background on hover */
+                }
+                .nav-link.active {
+                    color: #1a73e8;
+                    border-bottom: 2px solid #1a73e8; /* Underline for active */
+                    background-color: #e8f0fe; /* Light blue background for active */
+                }
+                .mobile-nav-link.active {
+                    color: #1a73e8;
+                    background-color: #e8f0fe;
+                    border-radius: 4px;
+                }
+                .btn-primary {
+                    @apply bg-blue-600 hover:bg-blue-700 text-white rounded-md shadow-md; /* Solid button with shadow */
+                }
+                .btn-primary:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+                }
+                .btn-secondary {
+                    @apply text-blue-600 bg-transparent border border-blue-600 hover:bg-blue-50 rounded-md shadow-sm; /* Outlined button */
+                }
+                .btn-secondary:hover {
+                    transform: translateY(-1px);
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                }
+                .heading-1 {
+                    @apply text-5xl font-bold text-gray-900 mb-8;
+                    line-height: 1.2;
+                }
+                .heading-2 {
+                    @apply text-3xl font-semibold text-gray-800 mb-6;
+                }
+                .text-body {
+                    @apply text-gray-700 text-lg;
+                    line-height: 1.6;
+                }
+                .section {
+                    padding: 70px 0;
+                }
+                #home {
+                    background-color: #f8f9fa; /* Lighter background */
+                }
+                #home-content {
+                    @apply text-center md:text-left;
+                    padding-right: 20px;
+                }
+                #home-image {
+                    @apply flex justify-center;
+                }
+                #home-image .relative,
+                #about-image .relative {
+                    height: 320px;
+                }
+                #home-image img,
+                #about-image img {
+                    max-width: 100%;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                    transition: transform 0.5s ease;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                #home-image img:hover {
+                    transform: scale(1.03); /* Slightly less aggressive zoom */
+                }
+                .course-card {
+                    @apply bg-white rounded-lg shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg border border-gray-100; /* Subtle border */
+                }
+                .course-card-content {
+                    @apply p-6;
+                }
+                .course-card-title {
+                    @apply text-2xl font-semibold text-gray-800 mb-3;
+                }
+                .course-card-description {
+                    @apply text-gray-600 text-base;
+                }
+                .tutor-profile {
+                    @apply bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center border border-gray-100;
+                }
+                .tutor-name {
+                    @apply text-xl font-semibold text-gray-800 mt-3;
+                }
+                .tutor-qualification {
+                    @apply text-gray-500 text-sm;
+                }
+                .testimonial-card {
+                    @apply bg-white rounded-lg p-6 mb-6 shadow-sm border border-gray-100;
+                }
+                .testimonial-card p {
+                    @apply text-gray-700 italic text-lg;
+                }
+                .testimonial-card p:last-child {
+                    @apply font-semibold text-gray-900 flex items-center;
+                }
+                .testimonial-card p:last-child svg{
+                    margin-right: 0.5rem;
+                }
+                #contact-form {
+                    @apply bg-white rounded-lg p-8 shadow-md;
+                }
+                #contact-form input,
+                #contact-form textarea {
+                    @apply border border-gray-300 rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-200; /* Material focus ring */
+                }
+                #contact-form label {
+                    @apply text-gray-800 font-medium;
+                }
+                footer {
+                    @apply bg-gray-900 text-gray-300 py-6;
+                    border-top: 1px solid #e5e7eb;
+                }
+                footer a {
+                    @apply text-blue-300 hover:text-white;
+                }
+                .mobile-nav-link {
+                    @apply text-xl font-medium;
+                }
+                .course-card ul li{
+                    margin-left: 0.5rem;
+                }
+                 .tutor-profile a:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                }
+            `,
+            elegant: `
+                body {
+                    font-family: 'Montserrat', sans-serif;
+                }
+                #main-header {
+                    background-color: #fff;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                }
+                #logo {
+                    color: #555;
+                    font-weight: 700;
+                    font-size: 2.5rem; /* Larger logo */
+                }
+                .nav-link {
+                    color: #333;
+                    font-weight: 600;
+                    letter-spacing: 0.5px;
+                    transition: color 0.3s ease, border-bottom 0.3s ease;
+                    padding-bottom: 4px; /* Space for underline */
+                }
+                .nav-link:hover {
+                    color: #8e44ad;
+                    border-bottom: 2px solid #8e44ad; /* Elegant underline */
+                }
+                .nav-link.active {
+                    color: #8e44ad;
+                    border-bottom: 2px solid #8e44ad;
+                }
+                .mobile-nav-link.active {
+                    color: #8e44ad;
+                }
+                .btn-primary {
+                    @apply bg-purple-600 hover:bg-purple-700 text-white rounded-full shadow-md px-8 py-3;
+                }
+                .btn-primary:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                }
+                .btn-secondary {
+                    @apply bg-gray-400 hover:bg-gray-500 text-white rounded-full shadow-md px-8 py-3;
+                }
+                .btn-secondary:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                }
+                .heading-1 {
+                    @apply text-5xl font-bold text-gray-900 mb-8;
+                    letter-spacing: -0.02em;
+                }
+                .heading-2 {
+                    @apply text-3xl font-semibold text-gray-800 mb-6;
+                    letter-spacing: -0.02em;
+                }
+                .text-body {
+                    @apply text-gray-700 text-lg sm:text-xl;
+                    line-height: 1.9;
+                }
+                .section {
+                    padding: 80px 0;
+                }
+                #home {
+                    background-color: #f5f5f5;
+                }
+                #home-content{
+                    padding-right: 30px;
+                }
+                #home-image {
+                    @apply flex justify-center;
+                }
+                #home-image .relative,
+                #about-image .relative {
+                    height: 320px;
+                }
+                #home-image img {
+                    max-width: 100%;
+                    border-radius: 12px;
+                    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+                    transition: transform 0.5s ease;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                #home-image img:hover {
+                    transform: scale(1.05);
+                }
+                .course-card {
+                    @apply bg-white rounded-lg shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg border border-gray-200;
+                }
+                .course-card-content {
+                    @apply p-6;
+                }
+                .course-card-title {
+                    @apply text-2xl font-semibold text-gray-900 mb-3;
+                    letter-spacing: -0.02em;
+                }
+                .course-card-description {
+                    @apply text-gray-600 text-base;
+                }
+                .tutor-profile {
+                    @apply bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center border border-gray-200;
+                    border-radius: 12px;
+                }
+                .tutor-name {
+                    @apply text-xl font-semibold text-gray-900 mt-3;
+                    letter-spacing: -0.02em;
+                }
+                .tutor-qualification {
+                    @apply text-gray-600 text-sm;
+                    margin-top: 8px;
+                }
+                .testimonial-card {
+                    @apply bg-white rounded-lg p-6 mb-6 shadow-sm border border-gray-200;
+                    border-radius: 12px;
+                }
+                .testimonial-card p {
+                    @apply text-gray-700 italic text-lg;
+                    line-height: 1.8;
+                }
+                .testimonial-card p:last-child {
+                    @apply font-semibold text-gray-900 flex items-center;
+                }
+                .testimonial-card p:last-child svg{
+                    margin-right: 0.5rem;
+                }
+                #contact-form {
+                    @apply bg-white rounded-lg p-8 shadow-md;
+                    border-radius: 12px;
+                }
+                #contact-form input,
+                #contact-form textarea {
+                    @apply border border-gray-300 rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline;
+                }
+                #contact-form label {
+                    @apply text-gray-900 font-medium;
+                    margin-bottom: 8px;
+                }
+                footer {
+                    @apply bg-gray-900 text-gray-200 py-6;
+                    border-top: 1px solid #e5e7eb;
+                }
+                footer a {
+                    @apply text-purple-300 hover:text-white;
+                }
+                .mobile-nav-link {
+                    @apply text-xl font-medium;
+                }
+                .course-card ul li{
+                    margin-left: 0.5rem;
+                }
+                .tutor-profile a:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                }
+            `,
+        };
+
+        function applyDesign(designName) {
+            if (designStylesContent[designName]) {
+                designStyles.innerHTML = designStylesContent[designName];
+                localStorage.setItem('currentDesign', designName);
+            }
+        }
+
+        const storedDesign = localStorage.getItem('currentDesign');
+        if (storedDesign) {
+            applyDesign(storedDesign);
+        } else {
+            applyDesign('modern');
+        }
+
+        const designSelector = document.createElement('div');
+        designSelector.classList.add('fixed', 'bottom-4', 'left-4', 'z-50');
+        designSelector.innerHTML = `
+            <div class="grid grid-cols-3 gap-2">
+                <button type="button" class="design-btn inline-flex items-center px-3 py-2 rounded-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:ring-opacity-50" data-design="modern">
+                    Modern
+                </button>
+                <button type="button" class="design-btn inline-flex items-center px-3 py-2 rounded-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:ring-opacity-50" data-design="classic">
+                    Classic
+                </button>
+                <button type="button" class="design-btn inline-flex items-center px-3 py-2 rounded-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:ring-opacity-50" data-design="elegant">
+                    Elegant
+                </button>
+            </div>
+        `;
+        document.body.appendChild(designSelector);
+
+        const designButtons = document.querySelectorAll('.design-btn');
+        designButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const designName = this.dataset.design;
+                applyDesign(designName);
+            });
+        });
+
+        //Smooth scrolling for all buttons and links
+        allButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                const target = this.getAttribute('href');
+                // Only attempt to scroll if the target is a valid ID selector and not just '#'
+                if (target && target !== '#' && document.querySelector(target)) {
+                    e.preventDefault(); // Prevent default only if a valid target is found
+                    document.querySelector(target).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                } else if (target === '#') {
+                    e.preventDefault(); // Prevent default for '#' links to avoid page jump
+                }
+            });
+        });
+
+        allLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const target = this.getAttribute('href');
+                // Only attempt to scroll if the target is a valid ID selector and not just '#'
+                if (target && target !== '#' && document.querySelector(target)) {
+                    e.preventDefault(); // Prevent default only if a valid target is found
+                    document.querySelector(target).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                } else if (target === '#') {
+                    e.preventDefault(); // Prevent default for '#' links to avoid page jump
+                }
+            });
+        });
+
+        // Form submission
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const subjectInput = document.getElementById('subject'); // Get the new subject input
+            const messageInput = document.getElementById('message');
+
+            if (nameInput.value.trim() === '') {
+                alert('Please enter your name.');
+                nameInput.focus();
+                return;
+            }
+
+            if (emailInput.value.trim() === '') {
+                alert('Please enter your email.');
+                emailInput.focus();
+                return;
+            }
+
+            if (subjectInput.value.trim() === '') {
+                alert('Please enter a subject.');
+                subjectInput.focus();
+                return;
+            }
+
+            if (messageInput.value.trim() === '') {
+                alert('Please enter your message.');
+                messageInput.focus();
+                return;
+            }
+
+            // In a real application, you would send the data to a server here
+            console.log('Form submitted with the following data:');
+            console.log('Name:', nameInput.value);
+            console.log('Email:', emailInput.value);
+            console.log('Subject:', subjectInput.value); // Log the subject
+            console.log('Message:', messageInput.value);
+
+            alert('Your message has been sent successfully!');
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
