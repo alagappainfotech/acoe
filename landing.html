@@ -508,7 +508,7 @@
                     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                 }
                 .btn-secondary {
-                    @apply bg-gray-400 hover:bg-gray-500 text-white rounded-md shadow-md;
+                    @apply text-blue-600 bg-transparent border border-blue-600 hover:bg-blue-100 rounded-md shadow-sm;
                 }
                 .btn-secondary:hover {
                     transform: translateY(-2px);
@@ -920,41 +920,12 @@
         function applyDesign(designName) {
             if (designStylesContent[designName]) {
                 designStyles.innerHTML = designStylesContent[designName];
-                localStorage.setItem('currentDesign', designName);
+                // localStorage.setItem('currentDesign', designName); // Removed
             }
         }
 
-        const storedDesign = localStorage.getItem('currentDesign');
-        if (storedDesign) {
-            applyDesign(storedDesign);
-        } else {
-            applyDesign('modern');
-        }
-
-        const designSelector = document.createElement('div');
-        designSelector.classList.add('fixed', 'bottom-4', 'left-4', 'z-50');
-        designSelector.innerHTML = `
-            <div class="grid grid-cols-3 gap-2">
-                <button type="button" class="design-btn inline-flex items-center px-3 py-2 rounded-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:ring-opacity-50" data-design="modern">
-                    Modern
-                </button>
-                <button type="button" class="design-btn inline-flex items-center px-3 py-2 rounded-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:ring-opacity-50" data-design="classic">
-                    Classic
-                </button>
-                <button type="button" class="design-btn inline-flex items-center px-3 py-2 rounded-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:ring-opacity-50" data-design="elegant">
-                    Elegant
-                </button>
-            </div>
-        `;
-        document.body.appendChild(designSelector);
-
-        const designButtons = document.querySelectorAll('.design-btn');
-        designButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const designName = this.dataset.design;
-                applyDesign(designName);
-            });
-        });
+        applyDesign('modern');
+        // localStorage.setItem('currentDesign', 'modern'); // Optionally set it if needed elsewhere
 
         //Smooth scrolling for all buttons and links
         allButtons.forEach(button => {
